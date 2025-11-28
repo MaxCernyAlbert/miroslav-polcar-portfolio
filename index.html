@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miroslav Polcar | Head of Key Accounts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(26, 26, 46, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .header .title {
+            font-size: 1.3rem;
+            color: #4ecca3;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .header .location {
+            font-size: 1rem;
+            color: #a0a0a0;
+            margin-bottom: 25px;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid #4ecca3;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .contact-links a:hover {
+            background: #4ecca3;
+            color: #1a1a2e;
+        }
+
+        /* Sections */
+        .section {
+            background: white;
+            padding: 35px 40px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #4ecca3;
+            display: inline-block;
+        }
+
+        .section p {
+            color: #444;
+            font-size: 1.05rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, #4ecca3 0%, #38b48b 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .language-tag {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* Experience */
+        .experience-item {
+            border-left: 3px solid #4ecca3;
+            padding-left: 25px;
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .experience-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            background: #4ecca3;
+            border-radius: 50%;
+        }
+
+        .experience-item h3 {
+            font-size: 1.2rem;
+            color: #1a1a2e;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .company {
+            font-size: 1.1rem;
+            color: #4ecca3;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .period {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .experience-item .location-exp {
+            font-size: 0.85rem;
+            color: #aaa;
+            margin-bottom: 12px;
+        }
+
+        .experience-item ul {
+            color: #555;
+            padding-left: 20px;
+        }
+
+        .experience-item li {
+            margin-bottom: 8px;
+        }
+
+        .achievement {
+            background: #f0fdf4;
+            border-left: 4px solid #4ecca3;
+            padding: 12px 16px;
+            margin-top: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .achievement strong {
+            color: #1a1a2e;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 20px;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-item h3 {
+            font-size: 1.1rem;
+            color: #1a1a2e;
+        }
+
+        .education-item .degree {
+            color: #4ecca3;
+            font-weight: 500;
+        }
+
+        .education-item .year {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Highlights */
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .highlight-card {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+        }
+
+        .highlight-card .number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #4ecca3;
+        }
+
+        .highlight-card .label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                padding: 40px 25px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-links a {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Miroslav Polcar</h1>
+            <div class="title">Head of Key Accounts at Jindal Films</div>
+            <div class="location">Koerich, Luxembourg</div>
+            <div class="contact-links">
+                <a href="mailto:miroslav.polcar@gmail.com">miroslav.polcar@gmail.com</a>
+                <a href="tel:+420770600996">+420 770 600 996</a>
+                <a href="https://www.linkedin.com/in/miroslav-polcar-555a8380/" target="_blank">LinkedIn</a>
+            </div>
+        </header>
+
+        <section class="section">
+            <h2>About Me</h2>
+            <p>
+                At the helm of Jindal Films' key account management, I bring many years of experience in sales and strategic leadership, fueled by a passion for sustainable growth and meaningful impact.
+            </p>
+            <p style="margin-top: 15px;">
+                My tenure managing one of Huhtamaki Europe's largest accounts sharpened my skills in driving profitable business growth and fostering long-term client relationships. I led a high-performing team to deliver innovative solutions that consistently exceeded revenue targets while prioritizing sustainable business practices.
+            </p>
+            <div class="highlights">
+                <div class="highlight-card">
+                    <div class="number">10+</div>
+                    <div class="label">Years in Sales & Key Accounts</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">35M</div>
+                    <div class="label">Contract Value Secured</div>
+                </div>
+                <div class="highlight-card">
+                    <div class="number">3</div>
+                    <div class="label">European Markets Managed</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Core Competencies</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Key Account Management</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">Strategic Planning</span>
+                <span class="skill-tag">Business Development</span>
+                <span class="skill-tag">Microsoft Power BI</span>
+                <span class="skill-tag">Sustainable Solutions</span>
+                <span class="skill-tag">Cross-functional Coordination</span>
+                <span class="skill-tag">Client Relationship Management</span>
+            </div>
+            <h3 style="margin-top: 25px; margin-bottom: 12px; font-size: 1rem; color: #666;">Languages</h3>
+            <div class="skills-grid">
+                <span class="language-tag">Czech (Native)</span>
+                <span class="language-tag">English (Full Professional)</span>
+                <span class="language-tag">German (Working)</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="company">Jindal Films</div>
+                <h3>Head of Key Accounts</h3>
+                <div class="period">October 2024 - Present</div>
+                <div class="location-exp">Luxembourg</div>
+                <ul>
+                    <li>Lead strategic initiatives to drive sustainable business growth and exceed revenue targets</li>
+                    <li>Cultivate strong relationships with key stakeholders to champion sustainable business practices</li>
+                    <li>Collaborate with team members to offer tailor-made solutions for clients seeking innovative packaging solutions</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Huhtamaki</div>
+                <h3>Global Key Account Sales Manager</h3>
+                <div class="period">October 2021 - October 2024 (3 years)</div>
+                <div class="location-exp">Ronsberg, Bavaria, Germany</div>
+                <ul>
+                    <li>Spearheaded management of one of Huhtamaki Europe's largest accounts</li>
+                    <li>Oversaw a team of 3 professionals, providing guidance and mentorship</li>
+                    <li>Coordinated activities across three production sites in Europe</li>
+                    <li>Championed sustainable business practices aligned with industry trends</li>
+                </ul>
+                <div class="achievement">
+                    <strong>Key Achievement:</strong> Secured a 35 million euro contract plus additional 3 million euros in growth through sustainable solutions
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">Huhtamaki</div>
+                <h3>Sales and Project Manager - Key Customers & UK, IRL, Scandinavian Market</h3>
+                <div class="period">January 2020 - October 2021 (1 year 10 months)</div>
+                <div class="location-exp">Prague, Czechia</div>
+                <ul>
+                    <li>Managed key accounts across UK, Ireland, and Scandinavian markets</li>
+                    <li>Led internal project teams to deliver innovative solutions</li>
+                </ul>
+                <div class="achievement">
+                    <strong>Key Achievement:</strong> Relocated sachet packaging production from Germany to Czech Republic, achieving 20% cost reduction
+                </div>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">GEFCO</div>
+                <h3>Cluster Key Account Manager CZ & SK - Car Suppliers</h3>
+                <div class="period">September 2019 - December 2019</div>
+                <div class="location-exp">Prague, Czechia</div>
+                <ul>
+                    <li>Managed automotive segment customers and supply chain operations</li>
+                    <li>Developed customized solutions for car suppliers</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="company">PST CLC, a.s.</div>
+                <h3>Key Account Manager (CEE, APAC)</h3>
+                <div class="period">August 2014 - August 2019 (5 years)</div>
+                <div class="location-exp">Prague, Czechia</div>
+                <ul>
+                    <li>Oversaw warehousing, air & sea, and customs services for clients in Central/Eastern Europe and Asia-Pacific</li>
+                    <li>Represented company at global logistics fairs</li>
+                    <li>Maintained relationships with regulatory bodies and local authorities</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3>Czech Technical University in Prague</h3>
+                <div class="degree">Biomedical/Medical Engineering</div>
+                <div class="year">2006 - 2009</div>
+            </div>
+            <div class="education-item">
+                <h3>Gymnazium Decin</h3>
+                <div class="degree">High School Diploma, General Studies</div>
+                <div class="year">1998 - 2006</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Certifications</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Business Development: Strategic Planning</span>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 Miroslav Polcar. Open to new opportunities.</p>
+        </footer>
+    </div>
+</body>
+</html>
