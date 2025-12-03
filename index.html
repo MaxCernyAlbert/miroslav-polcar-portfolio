@@ -40,17 +40,9 @@
 
         /* Language Selector */
         .lang-selector {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1001;
             display: flex;
-            gap: 8px;
-            background: rgba(15, 23, 42, 0.9);
-            padding: 8px 12px;
-            border-radius: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            gap: 5px;
+            margin-left: 20px;
         }
 
         .lang-btn {
@@ -190,7 +182,6 @@
             display: flex;
             gap: 40px;
             list-style: none;
-            margin-right: 120px;
         }
 
         .nav-links a {
@@ -742,10 +733,22 @@
         }
 
         /* Language content */
-        [data-lang] { display: none; }
-        [data-lang].active { display: block; }
+        div[data-lang] { display: none; }
+        div[data-lang].active { display: block; }
         span[data-lang] { display: none; }
         span[data-lang].active { display: inline; }
+        .stat-label { display: none; }
+        .stat-label.active { display: block; }
+        h2[data-lang] { display: none; }
+        h2[data-lang].active { display: block; }
+        h3[data-lang] { display: none; }
+        h3[data-lang].active { display: block; }
+        p[data-lang] { display: none; }
+        p[data-lang].active { display: block; }
+        ul[data-lang] { display: none; }
+        ul[data-lang].active { display: block; }
+        .company[data-lang] { display: none; }
+        .company[data-lang].active { display: block; }
 
         /* Responsive */
         @media (max-width: 1024px) {
@@ -864,23 +867,13 @@
             }
 
             .lang-selector {
-                top: auto;
-                bottom: 100px;
-                right: 20px;
+                display: none;
             }
         }
     </style>
 </head>
 <body>
     <div class="bg-animation"></div>
-
-    <!-- Language Selector -->
-    <div class="lang-selector">
-        <button class="lang-btn active" onclick="setLang('en')" title="English">🇬🇧</button>
-        <button class="lang-btn" onclick="setLang('cs')" title="Cesky">🇨🇿</button>
-        <button class="lang-btn" onclick="setLang('de')" title="Deutsch">🇩🇪</button>
-        <button class="lang-btn" onclick="setLang('fr')" title="Francais">🇫🇷</button>
-    </div>
 
     <!-- Floating CTA Buttons -->
     <div class="floating-cta">
@@ -903,11 +896,17 @@
     <nav class="nav">
         <div class="nav-logo">MP</div>
         <ul class="nav-links">
-            <li><a href="#about"><span data-lang="en" class="active">About</span><span data-lang="cs">O mne</span><span data-lang="de">Uber mich</span><span data-lang="fr">A propos</span></a></li>
-            <li><a href="#skills"><span data-lang="en" class="active">Skills</span><span data-lang="cs">Dovednosti</span><span data-lang="de">Fahigkeiten</span><span data-lang="fr">Competences</span></a></li>
-            <li><a href="#experience"><span data-lang="en" class="active">Experience</span><span data-lang="cs">Zkusenosti</span><span data-lang="de">Erfahrung</span><span data-lang="fr">Experience</span></a></li>
+            <li><a href="#about"><span data-lang="en" class="active">About</span><span data-lang="cs">O mně</span><span data-lang="de">Über mich</span><span data-lang="fr">À propos</span></a></li>
+            <li><a href="#skills"><span data-lang="en" class="active">Skills</span><span data-lang="cs">Dovednosti</span><span data-lang="de">Fähigkeiten</span><span data-lang="fr">Compétences</span></a></li>
+            <li><a href="#experience"><span data-lang="en" class="active">Experience</span><span data-lang="cs">Zkušenosti</span><span data-lang="de">Erfahrung</span><span data-lang="fr">Expérience</span></a></li>
             <li><a href="#contact"><span data-lang="en" class="active">Contact</span><span data-lang="cs">Kontakt</span><span data-lang="de">Kontakt</span><span data-lang="fr">Contact</span></a></li>
         </ul>
+        <div class="lang-selector">
+            <button class="lang-btn active" onclick="setLang('en')" title="English">🇬🇧</button>
+            <button class="lang-btn" onclick="setLang('cs')" title="Česky">🇨🇿</button>
+            <button class="lang-btn" onclick="setLang('de')" title="Deutsch">🇩🇪</button>
+            <button class="lang-btn" onclick="setLang('fr')" title="Français">🇫🇷</button>
+        </div>
     </nav>
 
     <section class="hero" id="about">
@@ -931,11 +930,11 @@
                     <h1>Miroslav <span>Polcar</span></h1>
                     <div class="tagline">Head of Key Accounts | Jindal Films Europe</div>
                     <div class="location"><i class="fas fa-map-marker-alt"></i> Lucembursko</div>
-                    <p class="value-prop">Premenuji slozite B2B vztahy na partnerství v radech milionu eur. Za 17 let jsem uzavrel kontrakty za více nez 150 milionu EUR a vybudoval strategicka spojenectví, ktera pohaneji udrzitelny rust.</p>
-                    <p>Hledate lidra, ktery prinasi vysledky? Kombinuji strategickou vizi s praktickyml pristupy, abych prekonal cile a vytvoril trvalou hodnotu pro globalni znacky.</p>
+                    <p class="value-prop">Přeměňuji složité B2B vztahy na partnerství v řádech milionů eur. Za 17 let jsem uzavřel kontrakty za více než 150 milionů EUR a vybudoval strategická spojenectví, která pohánějí udržitelný růst.</p>
+                    <p>Hledáte lídra, který přináší výsledky? Kombinuji strategickou vizi s praktickými přístupy, abych překonal cíle a vytvořil trvalou hodnotu pro globální značky.</p>
                     <div class="hero-buttons">
-                        <a href="https://wa.me/420770600996" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Pojdme si promluvit</a>
-                        <a href="mailto:miroslav.polcar@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Napiste mi</a>
+                        <a href="https://wa.me/420770600996" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> Pojďme si promluvit</a>
+                        <a href="mailto:miroslav.polcar@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> Napište mi</a>
                         <a href="https://www.linkedin.com/in/miroslav-polcar-555a8380/" target="_blank" class="btn btn-secondary"><i class="fab fa-linkedin"></i> LinkedIn</a>
                     </div>
                 </div>
@@ -978,29 +977,29 @@
         <div class="stats-grid">
             <div class="stat-item">
                 <div class="stat-number">17+</div>
-                <div class="stat-label" data-lang="en" class="active">Years in Sales Leadership</div>
-                <div class="stat-label" data-lang="cs">Let v obchodni m vedeni</div>
+                <div class="stat-label active" data-lang="en">Years in Sales Leadership</div>
+                <div class="stat-label" data-lang="cs">Let v obchodním vedení</div>
                 <div class="stat-label" data-lang="de">Jahre in Vertriebsfuhrung</div>
                 <div class="stat-label" data-lang="fr">Ans de leadership commercial</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">€150M+</div>
-                <div class="stat-label" data-lang="en" class="active">Contract Value Secured</div>
-                <div class="stat-label" data-lang="cs">Hodnota uzavrenych kontraktu</div>
+                <div class="stat-label active" data-lang="en">Contract Value Secured</div>
+                <div class="stat-label" data-lang="cs">Hodnota uzavřených kontraktů</div>
                 <div class="stat-label" data-lang="de">Vertragsvolumen gesichert</div>
                 <div class="stat-label" data-lang="fr">Valeur des contrats signes</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">20%</div>
-                <div class="stat-label" data-lang="en" class="active">Cost Reduction Achieved</div>
-                <div class="stat-label" data-lang="cs">Dosazena redukce nakladu</div>
+                <div class="stat-label active" data-lang="en">Cost Reduction Achieved</div>
+                <div class="stat-label" data-lang="cs">Dosažená redukce nákladů</div>
                 <div class="stat-label" data-lang="de">Kostensenkung erreicht</div>
                 <div class="stat-label" data-lang="fr">Reduction des couts realisee</div>
             </div>
             <div class="stat-item">
                 <div class="stat-number">5+</div>
-                <div class="stat-label" data-lang="en" class="active">European Markets</div>
-                <div class="stat-label" data-lang="cs">Evropskych trhu</div>
+                <div class="stat-label active" data-lang="en">European Markets</div>
+                <div class="stat-label" data-lang="cs">Evropských trhů</div>
                 <div class="stat-label" data-lang="de">Europaische Markte</div>
                 <div class="stat-label" data-lang="fr">Marches europeens</div>
             </div>
@@ -1010,11 +1009,11 @@
     <section class="section" id="skills">
         <div class="section-header">
             <h2 data-lang="en" class="active">Core <span>Competencies</span></h2>
-            <h2 data-lang="cs">Klicove <span>kompetence</span></h2>
+            <h2 data-lang="cs">Klíčové <span>kompetence</span></h2>
             <h2 data-lang="de">Kern<span>kompetenzen</span></h2>
             <h2 data-lang="fr">Competences <span>cles</span></h2>
             <p data-lang="en" class="active">Strategic expertise that drives measurable business success</p>
-            <p data-lang="cs">Strategicka expertiza, ktera prinasi meritelne vysledky</p>
+            <p data-lang="cs">Strategická expertíza, která přináší měřitelné výsledky</p>
             <p data-lang="de">Strategische Expertise fur messbaren Geschaftserfolg</p>
             <p data-lang="fr">Expertise strategique pour un succes commercial mesurable</p>
         </div>
@@ -1022,33 +1021,33 @@
             <div class="skill-card">
                 <i class="fas fa-handshake"></i>
                 <h3 data-lang="en" class="active">Key Account Management</h3>
-                <h3 data-lang="cs">Rizeni klicovych zakazniku</h3>
+                <h3 data-lang="cs">Řízení klíčových zákazníků</h3>
                 <h3 data-lang="de">Key Account Management</h3>
                 <h3 data-lang="fr">Gestion des comptes cles</h3>
                 <p data-lang="en" class="active">Building €150M+ partnerships</p>
-                <p data-lang="cs">Budovani partnerstvi za 150M+ EUR</p>
+                <p data-lang="cs">Budování partnerství za 150M+ EUR</p>
                 <p data-lang="de">Aufbau von €150M+ Partnerschaften</p>
                 <p data-lang="fr">Creation de partenariats de 150M+€</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-users"></i>
                 <h3 data-lang="en" class="active">Team Leadership</h3>
-                <h3 data-lang="cs">Vedeni tymu</h3>
+                <h3 data-lang="cs">Vedení týmu</h3>
                 <h3 data-lang="de">Teamfuhrung</h3>
                 <h3 data-lang="fr">Leadership d'equipe</h3>
                 <p data-lang="en" class="active">Developing high-performers</p>
-                <p data-lang="cs">Rozvoj vykonnych tymu</p>
+                <p data-lang="cs">Rozvoj výkonných týmů</p>
                 <p data-lang="de">Entwicklung von Spitzenleistern</p>
                 <p data-lang="fr">Developpement des talents</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-chess"></i>
                 <h3 data-lang="en" class="active">Strategic Planning</h3>
-                <h3 data-lang="cs">Strategicke planovani</h3>
+                <h3 data-lang="cs">Strategické plánování</h3>
                 <h3 data-lang="de">Strategische Planung</h3>
                 <h3 data-lang="fr">Planification strategique</h3>
                 <p data-lang="en" class="active">Long-term growth architecture</p>
-                <p data-lang="cs">Architektura dlouhodobeho rustu</p>
+                <p data-lang="cs">Architektura dlouhodobého růstu</p>
                 <p data-lang="de">Langfristige Wachstumsarchitektur</p>
                 <p data-lang="fr">Architecture de croissance</p>
             </div>
@@ -1059,25 +1058,25 @@
                 <h3 data-lang="de">Geschaftsentwicklung</h3>
                 <h3 data-lang="fr">Developpement commercial</h3>
                 <p data-lang="en" class="active">Identifying new opportunities</p>
-                <p data-lang="cs">Identifikace novych prilezitosti</p>
+                <p data-lang="cs">Identifikace nových příležitostí</p>
                 <p data-lang="de">Neue Chancen identifizieren</p>
                 <p data-lang="fr">Identifier les opportunites</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-leaf"></i>
                 <h3 data-lang="en" class="active">Sustainability</h3>
-                <h3 data-lang="cs">Udrzitelnost</h3>
+                <h3 data-lang="cs">Udržitelnost</h3>
                 <h3 data-lang="de">Nachhaltigkeit</h3>
                 <h3 data-lang="fr">Durabilite</h3>
                 <p data-lang="en" class="active">Eco-friendly packaging solutions</p>
-                <p data-lang="cs">Ekologicka balici reseni</p>
+                <p data-lang="cs">Ekologická balicí řešení</p>
                 <p data-lang="de">Umweltfreundliche Losungen</p>
                 <p data-lang="fr">Solutions d'emballage ecologiques</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-globe-europe"></i>
                 <h3 data-lang="en" class="active">International Markets</h3>
-                <h3 data-lang="cs">Mezinarodni trhy</h3>
+                <h3 data-lang="cs">Mezinárodní trhy</h3>
                 <h3 data-lang="de">Internationale Markte</h3>
                 <h3 data-lang="fr">Marches internationaux</h3>
                 <p data-lang="en" class="active">UK, DACH, Nordics, CEE, APAC</p>
@@ -1088,22 +1087,22 @@
             <div class="skill-card">
                 <i class="fas fa-chart-bar"></i>
                 <h3 data-lang="en" class="active">Data Analytics</h3>
-                <h3 data-lang="cs">Datova analytika</h3>
+                <h3 data-lang="cs">Datová analytika</h3>
                 <h3 data-lang="de">Datenanalyse</h3>
                 <h3 data-lang="fr">Analyse de donnees</h3>
                 <p data-lang="en" class="active">Power BI & data-driven decisions</p>
-                <p data-lang="cs">Power BI a rozhodnuti na zaklade dat</p>
+                <p data-lang="cs">Power BI a rozhodnutí na základě dat</p>
                 <p data-lang="de">Power BI & datenbasierte Entscheidungen</p>
                 <p data-lang="fr">Power BI & decisions basees sur les donnees</p>
             </div>
             <div class="skill-card">
                 <i class="fas fa-handshake-angle"></i>
                 <h3 data-lang="en" class="active">Negotiation</h3>
-                <h3 data-lang="cs">Vyjednavani</h3>
+                <h3 data-lang="cs">Vyjednávání</h3>
                 <h3 data-lang="de">Verhandlung</h3>
                 <h3 data-lang="fr">Negociation</h3>
                 <p data-lang="en" class="active">Multi-million contract closures</p>
-                <p data-lang="cs">Uzavirani milionovych kontraktu</p>
+                <p data-lang="cs">Uzavírání milionových kontraktů</p>
                 <p data-lang="de">Millionen-Vertragsabschlusse</p>
                 <p data-lang="fr">Cloture de contrats de plusieurs millions</p>
             </div>
@@ -1137,11 +1136,11 @@
     <section class="section" id="experience">
         <div class="section-header">
             <h2 data-lang="en" class="active">Career <span>Highlights</span></h2>
-            <h2 data-lang="cs">Karierni <span>uspechy</span></h2>
+            <h2 data-lang="cs">Kariérní <span>úspěchy</span></h2>
             <h2 data-lang="de">Karriere<span>hohepunkte</span></h2>
             <h2 data-lang="fr">Temps forts de <span>carriere</span></h2>
             <p data-lang="en" class="active">A track record of exceeding targets and building strategic partnerships</p>
-            <p data-lang="cs">Historie prekonani cilu a budovani strategickych partnerstvi</p>
+            <p data-lang="cs">Historie překonání cílů a budování strategických partnerství</p>
             <p data-lang="de">Eine Erfolgsbilanz der Zieluberschreitung und strategischer Partnerschaften</p>
             <p data-lang="fr">Un historique de depassement des objectifs et de partenariats strategiques</p>
         </div>
@@ -1160,9 +1159,9 @@
                         <li>Building C-level relationships with global FMCG brands</li>
                     </ul>
                     <ul data-lang="cs">
-                        <li>Vedu strategicke iniciativy na evropskych trzich</li>
-                        <li>Riditm inovace v udrzitelnem baleni</li>
-                        <li>Buduju vztahy na urovni C-level s globalni mi FMCG znackami</li>
+                        <li>Vedu strategické iniciativy na evropských trzích</li>
+                        <li>Řídím inovace v udržitelném balení</li>
+                        <li>Buduji vztahy na úrovni C-level s globálními FMCG značkami</li>
                     </ul>
                     <ul data-lang="de">
                         <li>Leitung strategischer Initiativen in europaischen Markten</li>
@@ -1191,9 +1190,9 @@
                         <li>Pioneered sustainability-focused business development</li>
                     </ul>
                     <ul data-lang="cs">
-                        <li>Sprava jednoho z nejvecsich evropskych uctu v oblasti flexibilnich obalu</li>
-                        <li>Vedeni multifunkcniho tymu pres 3 vyrobni zavody</li>
-                        <li>Prukopnik rozvoje podnikani zamere neho na udrzitelnost</li>
+                        <li>Správa jednoho z největších evropských účtů v oblasti flexibilních obalů</li>
+                        <li>Vedení multifunkčního týmu přes 3 výrobní závody</li>
+                        <li>Průkopník rozvoje podnikání zaměřeného na udržitelnost</li>
                     </ul>
                     <ul data-lang="de">
                         <li>Verwaltung eines der grossten europaischen Flexverpackungskonten</li>
@@ -1208,7 +1207,7 @@
                     <div class="achievement-badge">
                         <i class="fas fa-trophy"></i>
                         <span data-lang="en" class="active">€35M contract + €3M sustainable growth</span>
-                        <span data-lang="cs">Kontrakt 35M EUR + 3M EUR udrzitelny rust</span>
+                        <span data-lang="cs">Kontrakt 35M EUR + 3M EUR udržitelný růst</span>
                         <span data-lang="de">€35M Vertrag + €3M nachhaltiges Wachstum</span>
                         <span data-lang="fr">Contrat de 35M€ + 3M€ de croissance durable</span>
                     </div>
@@ -1228,8 +1227,8 @@
                         <li>Led production optimization and relocation projects</li>
                     </ul>
                     <ul data-lang="cs">
-                        <li>Sprava strategickych uctu ve Velke Britanii, Irsku a Skandinavii</li>
-                        <li>Vedeni projektu optimalizace a relokace vyroby</li>
+                        <li>Správa strategických účtů ve Velké Británii, Irsku a Skandinávii</li>
+                        <li>Vedení projektů optimalizace a relokace výroby</li>
                     </ul>
                     <ul data-lang="de">
                         <li>Verwaltung strategischer Konten in UK, Irland & Skandinavien</li>
@@ -1242,7 +1241,7 @@
                     <div class="achievement-badge">
                         <i class="fas fa-trophy"></i>
                         <span data-lang="en" class="active">20% cost reduction through strategic relocation</span>
-                        <span data-lang="cs">20% snizeni nakladu strategickou relokaci</span>
+                        <span data-lang="cs">20% snížení nákladů strategickou relokací</span>
                         <span data-lang="de">20% Kostensenkung durch strategische Verlagerung</span>
                         <span data-lang="fr">Reduction de 20% des couts par relocalisation strategique</span>
                     </div>
@@ -1263,9 +1262,9 @@
                         <li>Represented company at international trade fairs</li>
                     </ul>
                     <ul data-lang="cs">
-                        <li>Sprava logistickych operaci v regionech CEE a APAC</li>
-                        <li>Budovani vztahu s automobilovym a FMCG sektorem</li>
-                        <li>Zastupovani spolecnosti na mezinarodnilich veletrzich</li>
+                        <li>Správa logistických operací v regionech CEE a APAC</li>
+                        <li>Budování vztahů s automobilovým a FMCG sektorem</li>
+                        <li>Zastupování společnosti na mezinárodních veletrzích</li>
                     </ul>
                     <ul data-lang="de">
                         <li>Verwaltung von Logistikoperationen in CEE und APAC</li>
@@ -1283,11 +1282,11 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <div class="company" data-lang="en" class="active">Earlier Career</div>
-                    <div class="company" data-lang="cs">Predchozi kariera</div>
+                    <div class="company" data-lang="cs">Předchozí kariéra</div>
                     <div class="company" data-lang="de">Fruhere Karriere</div>
                     <div class="company" data-lang="fr">Debut de carriere</div>
                     <h3 data-lang="en" class="active">Various Sales Positions</h3>
-                    <h3 data-lang="cs">Ruzne obchodni pozice</h3>
+                    <h3 data-lang="cs">Různé obchodní pozice</h3>
                     <h3 data-lang="de">Verschiedene Vertriebspositionen</h3>
                     <h3 data-lang="fr">Divers postes commerciaux</h3>
                     <div class="period">
@@ -1300,9 +1299,9 @@
                         <li>Gained experience across multiple industries and market segments</li>
                     </ul>
                     <ul data-lang="cs">
-                        <li>Vybudoval silne zaklady v B2B prodeji a sprave klientu</li>
-                        <li>Rozvinul dovednosti vyjednavani a budovani vztahu</li>
-                        <li>Ziskal zkusenosti v ruznych odvetvich a trzních segmentech</li>
+                        <li>Vybudoval silné základy v B2B prodeji a správě klientů</li>
+                        <li>Rozvinul dovednosti vyjednávání a budování vztahů</li>
+                        <li>Získal zkušenosti v různých odvětvích a tržních segmentech</li>
                     </ul>
                     <ul data-lang="de">
                         <li>Aufbau einer starken Grundlage im B2B-Vertrieb und Kundenmanagement</li>
@@ -1322,15 +1321,15 @@
     <!-- CTA Section -->
     <section class="contact-cta">
         <h2 data-lang="en" class="active">Ready to Drive Your Business Forward?</h2>
-        <h2 data-lang="cs">Pripraveni posunout vas byznys vpred?</h2>
+        <h2 data-lang="cs">Připraveni posunout váš byznys vpřed?</h2>
         <h2 data-lang="de">Bereit, Ihr Geschaft voranzutreiben?</h2>
         <h2 data-lang="fr">Pret a faire avancer votre entreprise?</h2>
         <p data-lang="en" class="active">Let's discuss how my experience can create value for your organization</p>
-        <p data-lang="cs">Pojdme diskutovat, jak mohou me zkusenosti vytvorit hodnotu pro vasi organizaci</p>
+        <p data-lang="cs">Pojďme diskutovat, jak mohou mé zkušenosti vytvořit hodnotu pro vaši organizaci</p>
         <p data-lang="de">Lassen Sie uns besprechen, wie meine Erfahrung Wert fur Ihre Organisation schaffen kann</p>
         <p data-lang="fr">Discutons de comment mon experience peut creer de la valeur pour votre organisation</p>
         <div class="contact-cta-buttons">
-            <a href="https://wa.me/420770600996" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> <span data-lang="en" class="active">WhatsApp Me</span><span data-lang="cs">Napiste na WhatsApp</span><span data-lang="de">WhatsApp schreiben</span><span data-lang="fr">WhatsApp</span></a>
+            <a href="https://wa.me/420770600996" class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> <span data-lang="en" class="active">WhatsApp Me</span><span data-lang="cs">Napište na WhatsApp</span><span data-lang="de">WhatsApp schreiben</span><span data-lang="fr">WhatsApp</span></a>
             <a href="mailto:miroslav.polcar@gmail.com" class="btn btn-primary"><i class="fas fa-envelope"></i> <span data-lang="en" class="active">Send Email</span><span data-lang="cs">Poslat email</span><span data-lang="de">E-Mail senden</span><span data-lang="fr">Envoyer un email</span></a>
         </div>
     </section>
@@ -1338,7 +1337,7 @@
     <section class="contact-section" id="contact">
         <div class="section-header">
             <h2 data-lang="en" class="active">Get in <span>Touch</span></h2>
-            <h2 data-lang="cs">Kontaktujte <span>mne</span></h2>
+            <h2 data-lang="cs">Kontaktujte <span>mě</span></h2>
             <h2 data-lang="de">Kontaktieren Sie <span>mich</span></h2>
             <h2 data-lang="fr">Contactez-<span>moi</span></h2>
         </div>
@@ -1363,7 +1362,7 @@
     </section>
 
     <footer class="footer">
-        <p>© 2024 Miroslav Polcar. <span data-lang="en" class="active">Open to new opportunities.</span><span data-lang="cs">Otevreny novym prilezitostem.</span><span data-lang="de">Offen fur neue Moglichkeiten.</span><span data-lang="fr">Ouvert aux nouvelles opportunites.</span></p>
+        <p>© 2024 Miroslav Polcar. <span data-lang="en" class="active">Open to new opportunities.</span><span data-lang="cs">Otevřený novým příležitostem.</span><span data-lang="de">Offen fur neue Moglichkeiten.</span><span data-lang="fr">Ouvert aux nouvelles opportunites.</span></p>
     </footer>
 
     <script>
